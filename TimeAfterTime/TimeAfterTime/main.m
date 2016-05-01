@@ -19,6 +19,14 @@ int main(int argc, const char * argv[]) {
 		
 		NSDate *later = [now dateByAddingTimeInterval:100000];
 		NSLog(@"In 100,000 seconds it will be %@", later);
+		
+		NSCalendar *cal = [NSCalendar currentCalendar];
+		NSLog(@"calender is %@", [cal calendarIdentifier]);
+		
+		unsigned long day = [cal ordinalityOfUnit : NSCalendarUnitDay
+										   inUnit : NSCalendarUnitMonth
+										  forDate : now];
+		NSLog(@"This is day %lu of the month", day);
 	}
     return 0;
 }
