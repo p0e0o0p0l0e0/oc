@@ -46,6 +46,22 @@ int main(int argc, const char * argv[]) {
 		
 		NSString *upperFormatStr = [formatStr uppercaseString];
 		NSLog(@"upperFormatStr is %@", upperFormatStr);
+		
+		
+		//Chapter 16.3 Class References
+		NSString *listOfNames = @"zlq, cj, mwy";
+		NSString *cjname = @"cj";
+		
+		NSRange match = [listOfNames rangeOfString:cjname];
+		if(match.location != NSNotFound)
+		{
+			NSLog(@"Found %@ in listOfNames", cjname);
+		}
+		else
+		{
+			NSLog(@"Not found %@ in listOfNames", cjname);
+		}
+		
 	}
     return 0;
 }
