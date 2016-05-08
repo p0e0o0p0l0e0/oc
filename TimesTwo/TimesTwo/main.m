@@ -24,6 +24,13 @@ int main(int argc, const char * argv[]) {
 		
 		currentTime = nil;
 		NSLog(@"currentTime's value is %p", currentTime);
+		
+		NSString *str = @"I \u2661 NY!";
+		NSLog(@"%@", str);
+		
+		NSDate *now = [NSDate date];
+		NSString *formatStr = [NSString stringWithFormat:@"This date is %@", now];
+		NSLog(@"%@", formatStr);
 	}
     return 0;
 }
