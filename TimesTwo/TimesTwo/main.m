@@ -62,6 +62,30 @@ int main(int argc, const char * argv[]) {
 			NSLog(@"Not found %@ in listOfNames", cjname);
 		}
 		
+		//Chapter 16.5 Finding more NSString methods
+		NSString *CJname = @"CJ";
+		NSRange match1 = [listOfNames rangeOfString:CJname];
+		if(match1.location != NSNotFound)
+		{
+			NSLog(@"Found %@ in listOfNames", CJname);
+		}
+		else
+		{
+			NSLog(@"Not found %@ in listOfNames", CJname);
+		}
+		
+		NSRange match2 = [listOfNames rangeOfString:CJname
+											options:NSCaseInsensitiveSearch];
+		if(match2.location != NSNotFound)
+		{
+			NSLog(@"Found %@ in listOfNames", CJname);
+		}
+		else
+		{
+			NSLog(@"Not found %@ in listOfNames", CJname);
+		}
+		
+		
 	}
     return 0;
 }
