@@ -31,6 +31,21 @@ int main(int argc, const char * argv[]) {
 		NSDate *now = [NSDate date];
 		NSString *formatStr = [NSString stringWithFormat:@"This date is %@", now];
 		NSLog(@"%@", formatStr);
+		
+		NSUInteger count = [formatStr length];
+		NSLog(@"formatStr length is %lu", count);
+		
+		NSString *fformatStr = @"This date is xx";
+		
+		if([formatStr isEqualToString:fformatStr])
+		{
+			NSLog(@"Equal!");
+		}
+		else
+			NSLog(@"Not Equal!!");
+		
+		NSString *upperFormatStr = [formatStr uppercaseString];
+		NSLog(@"upperFormatStr is %@", upperFormatStr);
 	}
     return 0;
 }
