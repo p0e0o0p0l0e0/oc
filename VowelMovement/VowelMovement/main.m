@@ -27,6 +27,13 @@ int main(int argc, const char * argv[]) {
 		
 		devowelizer = ^(id originalString, NSUInteger i, BOOL *stop){
 			
+			NSRange yRange = [originalString rangeOfString:@"y"];
+			if(yRange.location != NSNotFound)
+			{
+				*stop = YES; // If "y" is found, set *stop to YES to end the enumerate process.
+				return; // break current block object.
+			}
+			
 			NSMutableString *newString = [NSMutableString stringWithString: originalString];
 			
 			for(NSString *s in vowels){
